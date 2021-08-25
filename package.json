@@ -6,16 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon",
-    "ui": "browser-sync start --config bs-config.js",
-    "build": "npm install --production"
-
+    "build": "yarn install --production yarn build && yarn export",
+    "start": "node index.js"
   },
   "author": "Barnabas",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "build": "^0.1.4",
     "express": "^4.17.1",
     "node-localstorage": "^2.2.1",
+    "npm": "^7.21.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
