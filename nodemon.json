@@ -1,0 +1,7 @@
+{
+    "delay": 2000,
+    "watch": [
+        "views/"
+      ],
+    "ext":"js, pug"
+}
