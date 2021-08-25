@@ -1,8 +1,5 @@
 const express = require("express");
-const https = require("https");
 const path = require("path");
-const axios = require("axios");
-const fs = require("fs");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -22,18 +19,18 @@ app.post("/login", (req, res) => {
   res.end();
 });
 
-const sslServer = https.createServer(
-  {
-    key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
-  },
-  app
-);
+// const sslServer = https.createServer(
+//   {
+//     key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+//     cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+//   },
+//   app
+// );
 
 app.get("/user/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
-sslServer.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening at https://localhost:${port}`);
 });
