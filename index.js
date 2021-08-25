@@ -4,7 +4,7 @@ const path = require("path");
 const axios = require("axios");
 const fs = require("fs");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
